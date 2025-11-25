@@ -114,39 +114,51 @@ const projects = [
 const experiences = [
     {
         id: 1,
+        date: "2025",
+        title: "Deep Dive into RAG, MCP and Agentic AI (exploring currently)",
+        description: "Currently exploring advanced AI concepts including Retrieval-Augmented Generation (RAG), Model Context Protocol (MCP), and agentic AI systems. Building practical applications that leverage these technologies for intelligent automation and enhanced AI capabilities."
+    },
+    {
+        id: 2,
+        date: "2025",
+        title: "Deep Dive into CV and NLP fusion by building Image Captioning model",
+        description: "Exploring the intersection of Computer Vision and Natural Language Processing by building an image captioning model. Implementing encoder-decoder architectures that combine CNN-based image feature extraction with transformer-based text generation for generating descriptive captions."
+    },
+    {
+        id: 3,
+        date: "2025",
+        title: "Software Engineering Project - Built FormalNet using transformers architecture for text to text neural style transfer to formalize informal texts.",
+        description: "Developed FormalNet as a software engineering project, implementing a transformer-based neural style transfer system for text formalization. Created a Django web application with REST API for converting informal text to formal, professional language using sequence-to-sequence transformers."
+    },
+    {
+        id: 4,
+        date: "2025",
+        title: "Nepal Data Challenge 001 - NepBERTa Text Sentiment Classification",
+        description: "Participated in Nepal Data Challenge using NepBERTa model for Nepali Text Sentiment Classification. Achieved 70% accuracy and ranked 2nd in the final leaderboard. Worked with transformer architectures for Nepali language processing."
+    },
+    {
+        id: 5,
+        date: "2025",
+        title: "TechParva 3.0 Datathon - Bank Loan Grade Prediction",
+        description: "Participated in TechParva 3.0 Datathon, working on a bank loan dataset to predict loan worthiness grades from A to G. Applied machine learning techniques for credit risk assessment."
+    },
+    {
+        id: 6,
         date: "July 2024 - January 2025",
         title: "AI Bootcamp - Innovative Computer Engineering Student's Society",
         description: "Collaborated with peers on deep learning projects including Pose Estimation and CNNs. Participated in hands-on sessions covering PyTorch, computer vision, and EDA. Contributed to group discussions on model performance and architecture choices."
     },
     {
-        id: 2,
-        date: "2024",
-        title: "Nepal Data Challenge 001 - NepBERTa Text Sentiment Classification",
-        description: "Participated in Nepal Data Challenge using NepBERTa model for Nepali Text Sentiment Classification. Achieved 70% accuracy and ranked 2nd in the final leaderboard. Worked with transformer architectures for Nepali language processing."
+        id: 7,
+        date: "2023-2024",
+        title: "Starting Phase - Learning Python programming basics along with OOPs concepts, WEB DEV with HTML,CSS,JS and created mini projects. Basic ML concepts grasped.",
+        description: "Foundation building phase focused on mastering Python programming fundamentals and Object-Oriented Programming concepts. Learned web development with HTML, CSS, and JavaScript while creating mini projects. Gained understanding of basic machine learning concepts and algorithms."
     },
     {
-        id: 3,
-        date: "2024",
-        title: "TechParva 3.0 Datathon - Bank Loan Grade Prediction",
-        description: "Participated in TechParva 3.0 Datathon, working on a bank loan dataset to predict loan worthiness grades from A to G. Applied machine learning techniques for credit risk assessment."
-    },
-    {
-        id: 4,
-        date: "2024",
-        title: "Yantra Hackathon - YOLOv8 Object Detection",
-        description: "Participated in Yantra Hackathon by Pokhara Engineering College. Worked on an object detection project fine-tuning a YOLOv8 model to detect cultural Nepali tools, showcasing computer vision skills."
-    },
-    {
-        id: 5,
-        date: "2023",
-        title: "AlexNet Architecture Research & Historical Impact Analysis",
-        description: "Conducted research on AlexNet's design and historical impact on deep convolutional networks. Compared model depth, filter sizes, and use of ReLU vs. other early models, demonstrating deep understanding of CNN evolution."
-    },
-    {
-        id: 6,
+        id: 8,
         date: "May 2023 - Present",
         title: "Computer Engineering Student - Paschimanchal Campus, IOE, TU",
-        description: "Currently pursuing Bachelor's degree in Computer Engineering at IOE, Pokhara. Maintaining strong academic performance with GPA 3.59 while actively engaging in AI/ML projects and technical communities."
+        description: "Currently pursuing Bachelor's degree in Computer Engineering at IOE, Pokhara. Actively engaging in AI/ML projects and technical communities."
     }
 ];
 

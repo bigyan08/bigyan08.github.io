@@ -260,14 +260,8 @@ const highlightActiveSection = () => {
 
 // Resume Download Handler
 const initResumeDownload = () => {
-    const resumeBtn = document.querySelector('a[href="#resume"]');
-    if (resumeBtn) {
-        resumeBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('Resume download functionality would be implemented here. Please add your resume PDF to the project and link it.');
-            // In production: window.location.href = '/path/to/resume.pdf';
-        });
-    }
+    // Resume download is now handled directly by the anchor tag with download attribute
+    // No JavaScript needed - the CV.pdf link works natively
 };
 
 // Initialize everything when DOM is loaded
