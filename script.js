@@ -130,6 +130,39 @@ const closeProjectModal = () => {
     document.body.style.overflow = 'auto';
 };
 
+// Render Blogs
+const renderBlogs = () => {
+    const container = document.getElementById('blogs-container');
+    
+    if (blogs.length === 0) {
+        container.innerHTML = '<p class="text-center text-gray-500 dark:text-gray-400 col-span-full">No blogs yet. Stay tuned!</p>';
+        return;
+    }
+    
+    blogs.forEach(blog => {
+        const blogCard = document.createElement('div');
+        blogCard.className = 'blog-card fade-in';
+        
+        blogCard.innerHTML = `
+            <div class="blog-icon">📝</div>
+            <div class="blog-date">${blog.date}</div>
+            <h3 class="blog-title">${blog.title}</h3>
+            <p class="blog-description">${blog.description}</p>
+            <div class="blog-tags">
+                ${blog.tags.map(tag => `<span class="tech-badge">${tag}</span>`).join('')}
+            </div>
+            <a href="${blog.link}" target="_blank" rel="noopener noreferrer" class="blog-link">
+                Read More 
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </a>
+        `;
+        
+        container.appendChild(blogCard);
+    });
+};
+
 // Render Timeline
 const renderTimeline = () => {
     const container = document.getElementById('timeline-container');
@@ -208,7 +241,7 @@ const initAnimations = () => {
     }, observerOptions);
     
     // Observe elements with animation class
-    document.querySelectorAll('.project-card, .timeline-item').forEach(el => {
+    document.querySelectorAll('.project-card, .blog-card, .timeline-item').forEach(el => {
         observer.observe(el);
     });
 };
@@ -269,6 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initNavbar();
     renderProjects();
+    renderBlogs();
     renderTimeline();
     initContactForm();
     initAnimations();

@@ -110,6 +110,27 @@ const projects = [
     }
 ];
 
+// Blogs Data
+const blogs = [
+    {
+        id: 1,
+        title: "Building RAG-based AI Research Assistant using LangChain",
+        description: "A beginner's guide to RAG by building a simple project.",
+        date: "December 2025",
+        link: "https://medium.com/@bigyan8aryal/building-rag-based-ai-research-assistant-using-langchain-41087d270ccc",
+        tags: ["Deep Learning","RAG", "Natural Language Processing", "Generative AI"]
+    },
+    // {
+    //     id: 2,
+    //     title: "Understanding Transformers",
+    //     description: "Deep dive into the transformer architecture that powers modern NLP.",
+    //     date: "November 2025",
+    //     link: "#",
+    //     tags: ["NLP", "Transformers", "AI"]
+    // }
+    // Add more blogs here
+];
+
 // Experience Timeline Data
 const experiences = [
     {
@@ -164,5 +185,5 @@ const experiences = [
 
 // Export data
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { projects, experiences };
+    module.exports = { projects, blogs, experiences };
 }
