@@ -1,0 +1,24 @@
+---
+title: "Visualizing Data using t-SNE"
+authors: ["Laurens van der Maaten", "Geoffrey Hinton"]
+year: 2008
+venue: "Journal of Machine Learning Research (JMLR), vol. 9"
+url: "https://www.jmlr.org/papers/v9/vandermaaten08a.html"
+slug: "t-sne"
+tags: ["foundational", "dimensionality-reduction", "visualization"]
+---
+\nt-SNE is a technique that is a variation of SNE, with improvements in better visualizations and easier optimization. High-dimensional data visualization is an important problem in a variety of domains. Many visualization techniques for high-dimensional data have been proposed, some of which are: Chernoff faces (which use facial structures, including their size and orientation, to define multiple dimensions), pixel-based techniques (which represent data points as pixels in an image), and graph-based techniques. Most of these techniques only display the data but do not exactly explain its structure and patterns.
+
+Next comes dimensionality reduction. Instead of showing the data as it is, dimensionality reduction techniques project it into lower dimensions while preserving major patterns and clusters. Some techniques are PCA and MDS. These are linear techniques where datasets can be projected onto a line, plane, or hyperplane. Since most real-world data, such as images and speech, is nonlinear, these techniques do not work very well. Nonlinear dimensionality reduction techniques try to preserve the local structure, meaning that points that are close in high-dimensional space should remain close in low-dimensional space as well. Some nonlinear dimensionality reduction techniques include Sammon mapping, SNE, and Isomap. While they work very well on artificial datasets, they are often unsuccessful on real, high-dimensional data.
+
+t-SNE is capable of capturing much of the local structure of high-dimensional data while also revealing global structure, such as the presence of clusters at several scales. In order to understand t-SNE, we need to understand SNE (Stochastic Neighbor Embedding), which converts high-dimensional Euclidean distances between datapoints into conditional probabilities that represent similarities. If point xj is near xi, then its conditional probability will be higher compared to a separated point xk that is far from xi. However, SNE has some problems, including difficult optimization (because of bad local minima that hinder gradient descent) and the crowding problem (where points collapse toward the center and clusters become difficult to separate). t-SNE replaces the probability function and makes the cost function simpler, while also making the gradients easier and more stable, thereby solving the optimization problem. To solve the crowding problem, Gaussian similarities are replaced by a Student-t distribution, which creates stronger repulsive forces that spread clusters apart and reduce crowding.
+
+This technique is compared against multiple other techniques such as Sammon mapping, CCA, SNE, and Isomap. When compared using the MNIST dataset, the results show strong performance by t-SNE relative to the other techniques. Isomap and LLE produce visualizations of the digit classes but with overlaps, whereas t-SNE produces a map that shows separation of the digit classes almost perfectly, as mentioned in the paper. The techniques were also compared using the COIL-20 dataset, which contains images of toys taken from different angles. t-SNE was able to accurately classify them by similarity, grouping different views of the same object by distorting the loop and mapping front and back images to nearby points. Here as well, t-SNE shows better visualizations compared to other techniques. For larger datasets, t-SNE becomes computationally expensive since standard t-SNE requires many pairwise similarity calculations. To counter this issue, researchers proposed landmark points. This makes large-dataset visualization possible without excessive computational overhead.
+
+Overall, t-SNE is a great technique for visualizing high-dimensional real-world data. It preserves local structure very effectively; the visualization maintains nearby relationships regardless of what happens to distant points. It solves the crowding problem by using a Student-t distribution to separate clusters. t-SNE also preserves both local and global structures in the visualization map. Although it shows good performance compared to other techniques, researchers mention some weaknesses of t-SNE.
+
+1. It is unclear how t-SNE performs on general dimensionality reduction tasks for d > 3 dimensions.
+    
+2. The local nature of t-SNE makes it sensitive to the curse of intrinsic dimensionality, meaning that for highly complex data structures, local neighborhoods become unreliable, making t-SNE less effective.
+    
+3. t-SNE has a non-convex objective function and can produce slightly different embeddings depending on initialization and optimization parameters.

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literature - Bigyan</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#64748b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="research.css">
+</head>
+<body class="academic-page bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 pt-16">
+    
+    <!-- Navigation (matching portfolio homepage) -->
+    <nav id="navbar" class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="../index.html" class="text-xl font-semibold text-gray-900 dark:text-gray-100">Bigyan</a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html#about" class="nav-link text-gray-900 dark:text-gray-100 hover:text-primary dark:hover:text-blue-400 transition-colors">About</a>
+                    <a href="../index.html#projects" class="nav-link text-gray-900 dark:text-gray-100 hover:text-primary dark:hover:text-blue-400 transition-colors">Projects</a>
+                    <a href="index.html" class="nav-link text-primary dark:text-blue-400 transition-colors font-medium">Literature</a>
+                    <a href="../index.html#experience" class="nav-link text-gray-900 dark:text-gray-100 hover:text-primary dark:hover:text-blue-400 transition-colors">Experience</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content px-4 py-12 lg:px-8 max-w-4xl mx-auto">
+        <header class="mb-12 text-center md:text-left">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 font-['Inter']">Literature Notes</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 font-['Inter']">A collection of concise overviews and insights from research papers I've read.</p>
+        </header>
+        
+        <!-- Where paper cards will be injected by JavaScript -->
+        <div id="papers-grid" class="academic-list space-y-8"></div>
+    </main>
+
+    <script src="papers.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('papers-grid');
+            
+            function renderPapers() {
+                grid.innerHTML = '';
+                
+                papersData.forEach(paper => {
+                    const card = document.createElement('div');
+                    card.className = 'academic-paper-card group cursor-pointer border-b border-gray-200 dark:border-gray-700 pb-6 transition-all duration-300 hover:-translate-y-1 block';
+                    card.onclick = () => window.location.href = `paper.html?file=${encodeURIComponent(paper.file)}`;
+                    
+                    const authorsStr = paper.authors ? paper.authors.join(', ') : '';
+                    
+                    card.innerHTML = `
+                        <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 group-hover:text-primary dark:group-hover:text-blue-400 transition-colors mb-2 font-['Inter']">${paper.title}</h2>
+                        <div class="paper-authors text-gray-600 dark:text-gray-300 font-['Inter'] text-sm mb-1">${authorsStr}</div>
+                        <div class="paper-venue text-gray-500 dark:text-gray-400 font-medium font-['Inter'] text-sm italic">${paper.venue} (${paper.year})</div>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+
+            renderPapers();
+        });
+    </script>
+</body>
+</html>
