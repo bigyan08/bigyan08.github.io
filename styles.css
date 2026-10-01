@@ -427,3 +427,71 @@ button:focus-visible {
 .dark button:focus-visible {
     outline-color: #60a5fa;
 }
+
+/* Literature introduction and shared research accents */
+section[id] {
+    scroll-margin-top: 5rem;
+}
+
+.section-eyebrow {
+    margin-bottom: 1rem;
+    color: #1e40af;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.dark .section-eyebrow {
+    color: #60a5fa;
+}
+
+.literature-intro {
+    display: grid;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.literature-aside {
+    border-left: 2px solid #d1d5db;
+    padding-left: 1.5rem;
+}
+
+.dark .literature-aside {
+    border-color: #374151;
+}
+
+.notes-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1.25rem;
+    border-radius: 0.5rem;
+    background: #1e40af;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.notes-link:hover {
+    background: #1d4ed8;
+}
+
+@media (min-width: 768px) {
+    .literature-intro {
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+        gap: 4rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html.scroll-smooth {
+        scroll-behavior: auto;
+    }
+
+    .notes-link,
+    #navbar {
+        transition: none;
+    }
+}

@@ -8,6 +8,8 @@
     <meta name="keywords" content="AI, ML, NLP, Deep Learning, Computer Vision, PyTorch, Django, Transformers, LLM">
     <title>Bigyan Aryal - Computer Engineering Student & AI Enthusiast</title>
     
+    <script src="site.js"></script>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -65,16 +67,18 @@
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
     
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
+    <nav id="navbar" aria-label="Main navigation" class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+            <div class="flex justify-between items-center h-16 gap-4">
                 <a href="#" class="text-xl font-semibold">Bigyan</a>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="nav-link hover:text-primary dark:hover:text-blue-400 transition-colors">About</a>
-                    <a href="#projects" class="nav-link hover:text-primary dark:hover:text-blue-400 transition-colors">Projects</a>
-                    <a href="#experience" class="nav-link hover:text-primary dark:hover:text-blue-400 transition-colors">Experience</a>
-                    <a href="#contact" class="nav-link hover:text-primary dark:hover:text-blue-400 transition-colors">Contact</a>
+                <div class="flex items-center gap-3 lg:gap-6">
+                    <div class="hidden md:flex items-center gap-4 lg:gap-6 text-sm">
+                    <a href="#about" class="nav-link transition-colors hover:text-primary dark:hover:text-blue-400">About</a>
+                    <a href="#projects" class="nav-link transition-colors hover:text-primary dark:hover:text-blue-400">Projects</a>
+                    <a href="#literature" class="nav-link transition-colors hover:text-primary dark:hover:text-blue-400">Literature Notes</a>
+                    <a href="#experience" class="nav-link transition-colors hover:text-primary dark:hover:text-blue-400">Experience</a>
+                    <a href="#contact" class="nav-link transition-colors hover:text-primary dark:hover:text-blue-400">Contact</a>
+                    </div>
                     <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle theme">
                         <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
@@ -83,24 +87,21 @@
                             <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
                         </svg>
                     </button>
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800" aria-label="Toggle navigation" aria-controls="mobile-menu" aria-expanded="false">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
                 </div>
-                
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
             </div>
-            
-            <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden pb-4">
-                <div class="flex flex-col space-y-3">
-                    <a href="#about" class="nav-link hover:text-primary dark:hover:text-blue-400 transition-colors">About</a>
-                    <a href="#projects" class="nav-link hover:text-primary dark:hover:text-blue-400 transition-colors">Projects</a>
+                <div class="flex flex-col gap-4 text-sm">
+                    <a href="#about" class="nav-link transition-colors hover:text-primary dark:hover:text-blue-400">About</a>
+                    <a href="#projects" class="nav-link transition-colors hover:text-primary dark:hover:text-blue-400">Projects</a>
+                    <a href="#literature" class="nav-link transition-colors hover:text-primary dark:hover:text-blue-400">Literature Notes</a>
+                    <a href="#experience" class="nav-link transition-colors hover:text-primary dark:hover:text-blue-400">Experience</a>
+                    <a href="#contact" class="nav-link transition-colors hover:text-primary dark:hover:text-blue-400">Contact</a>
                     <a href="#blogs" class="nav-link hover:text-primary dark:hover:text-blue-400 transition-colors">Blogs</a>
-                    <a href="#experience" class="nav-link hover:text-primary dark:hover:text-blue-400 transition-colors">Experience</a>
-                    <a href="#contact" class="nav-link hover:text-primary dark:hover:text-blue-400 transition-colors">Contact</a>
                 </div>
             </div>
         </div>
@@ -222,6 +223,35 @@
             
             <div class="relative border-l-2 border-primary dark:border-blue-400 ml-4" id="timeline-container">
                 <!-- Timeline items will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Literature Notes Section -->
+    <section id="literature" class="py-20 bg-gray-50 dark:bg-gray-800/50" aria-labelledby="literature-heading">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="literature-intro">
+                <div>
+                    <p class="section-eyebrow">Reading &amp; Research</p>
+                    <h2 id="literature-heading" class="text-3xl sm:text-4xl font-bold mb-5">Literature Notes</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl">
+                        Notes from research papers I read as I explore deep learning, computer vision, and medical imaging. I bring together the key ideas, methods, and takeaways to revisit and build on as I learn.
+                    </p>
+                    <a href="/literature/" class="notes-link mt-7">
+                        Browse literature notes
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M5 12h14m-6-6 6 6-6 6"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="literature-aside">
+                    <h3 class="text-sm font-semibold mb-4">Areas of interest</h3>
+                    <ul class="space-y-3 text-gray-600 dark:text-gray-400">
+                        <li>Foundation models</li>
+                        <li>Medical image analysis</li>
+                        <li>Representation learning</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
